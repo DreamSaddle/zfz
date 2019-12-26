@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zfzcommon" />
+        <module name="zfzeureka" />
+        <module name="zfzservicebasic" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="zfz" target="1.8" />
+      <module name="zfzcommon" target="1.8" />
+      <module name="zfzeureka" target="1.8" />
+      <module name="zfzservice" target="1.8" />
+      <module name="zfzservicebasic" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="zfzcommon" options="-parameters" />
+      <module name="zfzeureka" options="-parameters" />
+      <module name="zfzservice" options="-parameters" />
+      <module name="zfzservicebasic" options="-parameters" />
+    </option>
+  </component>
+</project>

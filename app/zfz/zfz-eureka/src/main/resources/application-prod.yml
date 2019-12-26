@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    hostname: 118.24.92.136
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
