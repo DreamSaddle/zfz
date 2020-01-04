@@ -1,7 +1,16 @@
 server:
-  port: 9001
+  port: 10001
 spring:
   application:
     name: zfz-service-basic
   profiles:
     active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

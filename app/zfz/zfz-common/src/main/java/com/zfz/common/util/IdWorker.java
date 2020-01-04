@@ -159,6 +159,11 @@ public class IdWorker {
         return id;
     }
 
+	static IdWorker idWorker=new IdWorker(0,0);
+
+    public static long getId() {
+	    return idWorker.nextId();
+    }
 
     public static void main(String[] args) {
 

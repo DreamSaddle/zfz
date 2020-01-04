@@ -1,0 +1,34 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+# spring boot admin server 登录账户名和密码
+spring:
+  security:
+    user:
+      name: "zfz"
+      password: "123123"
+  # 邮件通知
+  boot:
+    admin:
+      notify:
+        mail:
+          enabled: true
+          from: user_taohan@163.com
+          to: 1289747698@qq.com
+  mail:
+    host: smtp.163.com
+    password: uaF99uzxf100df
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    username: user_taohan@163.com
