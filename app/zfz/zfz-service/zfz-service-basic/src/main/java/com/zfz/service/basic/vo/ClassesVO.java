@@ -1,6 +1,6 @@
 package com.zfz.service.basic.vo;
 
-import com.zfz.service.basic.domain.Classes;
+import com.zfz.service.basic.model.Classes;
 import lombok.Getter;
 import lombok.Setter;
 

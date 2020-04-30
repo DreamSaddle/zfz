@@ -1,6 +1,8 @@
 package com.zfz.db.config;
 
+import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.zfz.db.handler.ZfzMetaObjectHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,4 +19,8 @@ public class MyBatisPlusConfig {
 		return new PaginationInterceptor();
 	}
 
+	@Bean
+	public MetaObjectHandler metaObjectHandler() {
+		return new ZfzMetaObjectHandler();
+	}
 }

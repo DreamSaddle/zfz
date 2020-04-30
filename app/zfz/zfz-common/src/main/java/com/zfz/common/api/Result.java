@@ -1,19 +1,22 @@
 package com.zfz.common.api;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * author: DreamSaddle
  * date: 2020年01月03日
  * time: 16:32
  */
 public class Result<T> {
-	private long code;
+	private int code;
 	private String message;
 	private T data;
 
 	protected Result() {
 	}
 
-	protected Result(long code, String message, T data) {
+	protected Result(int code, String message, T data) {
 		this.code = code;
 		this.message = message;
 		this.data = data;
@@ -109,11 +112,21 @@ public class Result<T> {
 		return new Result<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
 	}
 
-	public long getCode() {
+
+	public Map<String, Object> toMap() {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("data", this.getCode());
+		resultMap.put("message", this.getMessage());
+		resultMap.put("data", this.getData());
+
+		return resultMap;
+	}
+
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 

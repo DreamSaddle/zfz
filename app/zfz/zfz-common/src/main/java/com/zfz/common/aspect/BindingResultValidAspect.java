@@ -33,11 +33,12 @@ public class BindingResultValidAspect {
 			for (final Object arg : args) {
 				if (arg instanceof BindingResult) {
 					BindingResult bindingResult = (BindingResult) arg;
-					List<ObjectError> errors = bindingResult.getAllErrors();
-					if (errors.size() > 0) {
+					if (bindingResult.hasErrors()) {
+						List<ObjectError> errors = bindingResult.getAllErrors();
 						hasError = true;
 						message = errors.get(0).getDefaultMessage();
 					}
+					//只要找到 BindingResult, 不管是否有错误都跳出
 					break;
 				}
 			}

@@ -9,7 +9,7 @@ public enum ResultCode {
 
 	SUCCESS(200, "操作成功"),
 	FAILED(500, "操作失败"),
-	VALIDATE_FAILED(901, "参数校验失败"),
+	VALIDATE_FAILED(801, "参数校验失败"),
 	UNAUTHORIZED(902, "未登录"),
 	FORBIDDEN(903, "未授权");
 

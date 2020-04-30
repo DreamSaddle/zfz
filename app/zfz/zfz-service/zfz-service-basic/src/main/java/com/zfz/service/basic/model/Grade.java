@@ -1,4 +1,4 @@
-package com.zfz.service.basic.domain;
+package com.zfz.service.basic.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -19,7 +19,7 @@ import javax.validation.constraints.NotBlank;
 public class Grade {
 
 	@TableId(type = IdType.INPUT)
-	private Long id;
+	private long id;
 
 	@NotBlank(message = "年级名称不能为空")
 	private String name;

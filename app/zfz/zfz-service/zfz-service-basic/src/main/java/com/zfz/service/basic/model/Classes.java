@@ -1,4 +1,4 @@
-package com.zfz.service.basic.domain;
+package com.zfz.service.basic.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,15 +18,15 @@ import javax.validation.constraints.NotNull;
 public class Classes {
 
 	@TableId(type = IdType.INPUT)
-	private Long id;
+	private long id;
 
 	@NotBlank(message = "班级名称不能为空")
 	private String name;
 
 	@NotNull(message = "请为班级指定年级")
-	private Long grade;
+	private long gradeId;
 
-	private Integer jie;
+	private long jie;
 
-	private Long teacher;
+	private long teacherId;
 }

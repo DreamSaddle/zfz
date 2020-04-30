@@ -1,12 +1,12 @@
 package com.zfz.service.basic.dao;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zfz.service.basic.domain.Grade;
+import com.zfz.db.mapper.SuperMapper;
+import com.zfz.service.basic.model.Grade;
 
 /**
  * author: DreamSaddle
  * date: 2019年12月29日
  * time: 16:58
  */
-public interface GradeMapper extends BaseMapper<Grade> {
+public interface GradeMapper extends SuperMapper<Grade> {
 }

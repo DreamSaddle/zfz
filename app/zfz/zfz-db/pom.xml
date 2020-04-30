@@ -12,6 +12,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.zfz</groupId>
+            <artifactId>zfz-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.5</version>
@@ -23,7 +28,12 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.0</version>
+            <version>3.2.0</version>
+            <!--
+                留一个坑(问题)
+                3.3.0 MetaObjectHandler 实现类注入到容器中，但是执行不了填充方法
+                换 3.2.0 就可以了
+            -->
         </dependency>
     </dependencies>
 

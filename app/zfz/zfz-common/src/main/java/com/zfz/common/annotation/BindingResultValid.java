@@ -3,9 +3,7 @@ package com.zfz.common.annotation;
 import java.lang.annotation.*;
 
 /**
- * author: DreamSaddle
- * date: 2020年01月03日
- * time: 16:41
+ * controller BindingResult 注解参数校验结果统一处理注解
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

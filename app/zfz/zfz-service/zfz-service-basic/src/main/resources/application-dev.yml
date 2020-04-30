@@ -1,7 +1,8 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9000/eureka/
+#      defaultZone: http://localhost:9000/eureka/
+       defaultZone: http://118.24.92.136:9000/eureka
 
 spring:
   datasource:
@@ -14,5 +15,16 @@ spring:
 #    admin:
 #      client:
 #        url: http://localhost:9001
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: input
+      field-strategy: ignored
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 logging:
-  file: G:/zfz-logs/output.log
+  file:
+    name: logs/service-basic.log

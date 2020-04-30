@@ -1,15 +1,15 @@
-package com.zfz.service.basic.controller;
+package com.zfz.service.basic.web.manager;
 
 import com.zfz.common.annotation.BindingResultValid;
 import com.zfz.common.api.Result;
-import com.zfz.service.basic.domain.Grade;
+import com.zfz.common.entity.PageParam;
+import com.zfz.service.basic.model.Grade;
 import com.zfz.service.basic.service.GradeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * author: DreamSaddle
@@ -17,20 +17,20 @@ import java.util.List;
  * time: 17:02
  */
 @RestController
-@RequestMapping("/api/v1/grade")
+@RequestMapping("/api/service/basic/grade")
 public class GradeController {
 
-	@Autowired
+	@Resource
 	GradeService gradeService;
 
-	@GetMapping("/list")
-	public Result getGrades() {
-		return Result.success(gradeService.getGrades());
+	@GetMapping("/listPage")
+	public Result getGrades(PageParam pageParam) {
+		return Result.success(gradeService.getGrades(pageParam));
 	}
 
 	@PostMapping("/add")
 	@BindingResultValid
-	public Result addGrade(@Valid Grade grade, BindingResult bindingResult) {
+	public Result addGrade(@Valid @RequestBody Grade grade, BindingResult bindingResult) {
 		return Result.smart(gradeService.addGrade(grade));
 	}
 

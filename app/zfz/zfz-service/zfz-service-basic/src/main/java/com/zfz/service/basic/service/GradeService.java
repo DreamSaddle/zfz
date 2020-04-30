@@ -1,39 +1,35 @@
 package com.zfz.service.basic.service;
 
-import com.zfz.service.basic.domain.Grade;
-
-import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zfz.common.entity.PageParam;
+import com.zfz.common.util.IdWorker;
+import com.zfz.service.basic.dao.GradeMapper;
+import com.zfz.service.basic.model.Grade;
+import org.springframework.stereotype.Service;
 
 /**
  * author: DreamSaddle
  * date: 2019年12月29日
- * time: 16:59
+ * time: 17:01
  */
-public interface GradeService {
+@Service
+public class GradeService extends ServiceImpl<GradeMapper, Grade> {
 
-	/**
-	 * 获取所有年级信息
-	 */
-	List<Grade> getGrades();
+	public IPage<Grade> getGrades(PageParam pageParam) {
+		return baseMapper.selectPage(baseMapper.toPage(pageParam), null);
+	}
 
-	/**
-	 * 添加年级
-	 * @param grade
-	 * @return
-	 */
-	boolean addGrade(Grade grade);
+	public boolean addGrade(final Grade grade) {
+		grade.setId(IdWorker.getId());
+		return baseMapper.insert(grade) > 0;
+	}
 
-	/**
-	 * 删除年级
-	 * @param id
-	 * @return
-	 */
-	boolean deleteGrade(Long id);
+	public boolean deleteGrade(final Long id) {
+		return baseMapper.deleteById(id) > 0;
+	}
 
-	/**
-	 * 修改年级
-	 * @param grade
-	 * @return
-	 */
-	boolean updateGrade(Grade grade);
+	public boolean updateGrade(final Grade grade) {
+		return baseMapper.updateById(grade) > 0;
+	}
 }
